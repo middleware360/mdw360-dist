@@ -1,0 +1,4 @@
+# analyze old indexes
+0 2 * * * elasticsearch /opt/elasticsearch/bin/logstash-daily.sh 2>&1
+# delete old indexes
+0 3 * * * elasticsearch /usr/bin/perl /opt/elasticsearch/bin/logstash-delete-index.pl -d 5 -r
